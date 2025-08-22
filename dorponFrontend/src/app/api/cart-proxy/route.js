@@ -12,7 +12,7 @@ export async function POST(req) {
   }
 
   const body = await req.json();
-  const expressRes = await fetch(`${process.env.BASE_URL}/api/cart`, {
+  const expressRes = await fetch(`/api/cart`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
