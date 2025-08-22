@@ -28,7 +28,7 @@ export async function addToCart(product) {
 
 export async function getCart(token) {
   try {
-    const res = await fetch(`${process.env.BASE_URL}/api/cart`, {
+    const res = await fetch(`/api/cart`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -7,7 +7,7 @@ export async function addProduct(product) {
     console.log("api url : ", process.env.NEXT_PUBLIC_PRODUCT_URL);
   console.log("product : ", product);
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_PRODUCT_URL, {
+    const res = await fetch("api/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,13 +28,13 @@ export async function addProduct(product) {
 }
 
 export async function faceProduct() {
-  const res = await fetch(process.env.PRODUCT_URL);
+  const res = await fetch("api/products");
   const products = await res.json();
   return products;
 }
 export async function faceProductByID(id) {
   try {
-    const res = await fetch(`${process.env.PRODUCT_URL}/pages/product/${id}`);
+    const res = await fetch(`${"api/products"}/pages/product/${id}`);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -49,7 +49,7 @@ export async function faceProductByID(id) {
 export async function faceProductByCategory(category) {
   try {
     const res = await fetch(
-      `${process.env.PRODUCT_URL}/pages/category/${category}`
+      `${"api/products"}/pages/category/${category}`
     );
     if (!res.ok) {
       throw new Error("Failed to fetch data");
