@@ -26,6 +26,7 @@ app.use("/api/auth", require("./src/routes/authRoutes"));
 app.use("/api/cart", require("./src/routes/cartRoutes"));
 app.use("/api/order", require("./src/routes/orderRoutes"));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+module.exports = app;
