@@ -11,7 +11,7 @@ export async function submitOrder (order) {
         return;
     }
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_ORDER_URL, {
+    const res = await fetch("/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export async function getOrders() {
     return;
   }
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_ORDER_URL, {
+    const res = await fetch("/api/order", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
